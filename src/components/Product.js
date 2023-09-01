@@ -22,13 +22,13 @@ const Product = ({ item }) => {
           </div>
         </Link>
 
-        <div className="absolute top-6 -right-11 group-hover:right-5 bg-red-500 p-2 opacity-0 group-hover:opacity-100 transition-all">
+        <div
+          className="absolute top-6 -right-11 group-hover:right-5 bg-red-500 p-2 opacity-0 group-hover:opacity-100 transition-all"
+          onClick={() => dispatch(addToCart({ ...item }))}
+        >
           <button>
             <div className="flex justify-center items-center text-white w-12 h-12">
-              <BsPlus
-                className="text-3xl"
-                onClick={() => dispatch(addToCart({ ...item }))}
-              />
+              <BsPlus className="text-3xl" />
             </div>
           </button>
         </div>
