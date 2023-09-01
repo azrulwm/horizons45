@@ -1,11 +1,14 @@
 import { Link } from "react-router-dom";
 import { IoMdArrowForward } from "react-icons/io";
 import { FiTrash2 } from "react-icons/fi";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { showSidebar } from "../features/cartSlice";
 
 const Sidebar = () => {
   const isOpen = useSelector((state) => state.cart.isOpen);
-  console.log(isOpen);
+  const cart = useSelector((state) => state.cart.cart);
+  const dispatch = useDispatch();
+  console.log(cart);
 
   return (
     <div
@@ -13,7 +16,17 @@ const Sidebar = () => {
         isOpen ? "right-0" : "-right-full"
       } w-full bg-white fixed top-0 h-full shadow-2xl md:w-[35vw] xl:max-w-[30vw] transition-all duration-300 z-20 px-4 lg:px-[35px]`}
     >
-      Sidebar
+      <div className="flex items-center justify-between py-6 border-b">
+        <div className="uppercase text-sm font-semibold">Shopping bag (0)</div>
+        <div
+          onClick={() => {
+            dispatch(showSidebar());
+          }}
+          className="cursor-pointer w-8 h-8 flex justify-center items-center"
+        >
+          <IoMdArrowForward className="text-2xl" />
+        </div>
+      </div>
     </div>
   );
 };

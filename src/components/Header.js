@@ -1,14 +1,17 @@
 import { useDispatch } from "react-redux";
 import { showSidebar } from "../features/cartSlice";
+import { BsBag } from "react-icons/bs";
 
 const Header = () => {
   const dispatch = useDispatch();
-  console.log(showSidebar);
+
   return (
-    <div>
+    <header>
       <h1>Header</h1>
-      <h1 onClick={() => dispatch(showSidebar())}>open/close sidebar</h1>
-    </div>
+      <div onClick={() => dispatch(showSidebar())}>
+        <BsBag className="text-2xl" />
+      </div>
+    </header>
   );
 };
 
