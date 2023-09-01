@@ -5,6 +5,7 @@ export const cartSlice = createSlice({
   initialState: {
     isOpen: false,
     cart: [],
+    totalAmount: 0,
   },
   reducers: {
     showSidebar: (state) => {
@@ -26,6 +27,7 @@ export const cartSlice = createSlice({
 
         state.cart = [...state.cart, newItem];
       }
+      state.totalAmount += 1;
     },
 
     removeFromCart: (state, action) => {
@@ -34,6 +36,7 @@ export const cartSlice = createSlice({
       );
 
       state.cart[itemIndex].amount -= 1;
+      state.totalAmount -= 1;
 
       if (state.cart[itemIndex].amount === 0) state.cart.splice(itemIndex, 1);
     },
@@ -43,10 +46,21 @@ export const cartSlice = createSlice({
         (item) => item.id === action.payload
       );
 
+      state.totalAmount -= state.cart[itemIndex].amount;
       state.cart.splice(itemIndex, 1);
+    },
+
+    removeAllItem: (state) => {
+      state.cart = [];
+      state.totalAmount = 0;
     },
   },
 });
 
-export const { showSidebar, addToCart, removeFromCart, cancelItem } =
-  cartSlice.actions;
+export const {
+  showSidebar,
+  addToCart,
+  removeFromCart,
+  cancelItem,
+  removeAllItem,
+} = cartSlice.actions;

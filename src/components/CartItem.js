@@ -22,17 +22,20 @@ const CartItem = ({ item }) => {
             >
               {title}
             </Link>
-            <div className="text-xl cursor-pointer">
-              <IoMdClose
-                className="text-gray-500 hover:text-red-500 transition"
-                onClick={() => dispatch(cancelItem(id))}
-              />
+            <div
+              className="text-xl cursor-pointer"
+              onClick={() => dispatch(cancelItem(id))}
+            >
+              <IoMdClose className="text-gray-500 hover:text-red-500 transition" />
             </div>
           </div>
           <div className=" flex gap-x-2 h-[36px] text-sm">
             <div className="flex flex-1 max-w-[100px] items-center h-full border font-medium">
-              <div className="flex-1 h-full flex justify-center items-center cursor-pointer">
-                <IoMdRemove onClick={() => dispatch(removeFromCart(id))} />
+              <div
+                className="flex-1 h-full flex justify-center items-center cursor-pointer"
+                onClick={() => dispatch(removeFromCart(id))}
+              >
+                <IoMdRemove />
               </div>
               <div className="h-full flex justify-center items-center px-2">
                 {amount}
