@@ -27,7 +27,7 @@ const Product = ({ item }) => {
             <div className="flex justify-center items-center text-white w-12 h-12">
               <BsPlus
                 className="text-3xl"
-                onClick={() => dispatch(addToCart({ id, title }))}
+                onClick={() => dispatch(addToCart({ ...item }))}
               />
             </div>
           </button>

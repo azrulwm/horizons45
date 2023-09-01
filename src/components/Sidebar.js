@@ -3,6 +3,7 @@ import { IoMdArrowForward } from "react-icons/io";
 import { FiTrash2 } from "react-icons/fi";
 import { useSelector, useDispatch } from "react-redux";
 import { showSidebar } from "../features/cartSlice";
+import CartItem from "./CartItem";
 
 const Sidebar = () => {
   const isOpen = useSelector((state) => state.cart.isOpen);
@@ -26,6 +27,11 @@ const Sidebar = () => {
         >
           <IoMdArrowForward className="text-2xl" />
         </div>
+      </div>
+      <div>
+        {cart.map((item) => {
+          return <CartItem item={item} key={item.id} />;
+        })}
       </div>
     </div>
   );
