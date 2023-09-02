@@ -1,5 +1,6 @@
 import { useGetProductsQuery } from "../app/api/apiSlice";
 import Product from "../components/Product";
+import Banner from "../components/Banner";
 
 const Home = () => {
   const {
@@ -33,7 +34,12 @@ const Home = () => {
     productsContent = <div>{error}</div>;
   }
 
-  return productsContent;
+  return (
+    <div>
+      <Banner />
+      {productsContent}
+    </div>
+  );
 };
 
 export default Home;

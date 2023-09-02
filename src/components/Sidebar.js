@@ -64,6 +64,9 @@ const Sidebar = () => {
             <FiTrash2 />
           </div>
         </div>
+        <div className="bg-red-500 flex p-4 justify-center items-center text-white w-full font-medium cursor-pointer">
+          Checkout
+        </div>
       </div>
     </div>
   );
