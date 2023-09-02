@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { IoMdArrowForward } from "react-icons/io";
 import { FiTrash2 } from "react-icons/fi";
 import { useSelector, useDispatch } from "react-redux";
@@ -19,13 +18,12 @@ const Sidebar = () => {
       const totalPrice = cart.reduce((accumulator, currentItem) => {
         return accumulator + currentItem.amount * currentItem.price;
       }, 0);
-      console.log(totalPrice);
+
       setTotalPrice(totalPrice);
     } else {
       setTotalPrice(0);
     }
   }, [cart]);
-  console.log(cart);
 
   return (
     <div
