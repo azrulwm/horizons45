@@ -15,7 +15,7 @@ const Home = () => {
   if (isLoading) {
     productsContent = (
       <div>
-        <span>Loading...</span>
+        <span className="h-screen flex justify-center">Loading...</span>
       </div>
     );
   } else if (isSuccess) {

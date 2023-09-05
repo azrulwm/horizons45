@@ -1,70 +1,35 @@
-# Getting Started with Create React App
+Documentation: Running the Application Locally
+Prerequisites
+Before running the application, ensure you have the following installed on your machine:
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- Docker
 
-## Available Scripts
+Steps to Run the Application
 
-In the project directory, you can run:
+1. Pull the Docker Image from Docker Hub:
 
-### `yarn start`
+docker pull azrulwm/horizons45
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+2. Run the Docker Container:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Run the container using the image you've just pulled. Replace placeholders with your specific details.
 
-### `yarn test`
+docker run -d -p 3000:3000 azrulwm/horizons45
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+In this example, we're mapping port 3000 in the container to port 3000 on the host. Adjust as necessary if you're using a different port.
 
-### `yarn build`
+docker run -d -p <your_port>:3000 azrulwm/horizons45
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+3. Access the Application:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Open your favorite browser and navigate to http://localhost:3000 to access the application.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Stopping the Container:
 
-### `yarn eject`
+If you wish to stop the running container, you first need to get its container ID:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+docker ps
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Identify the container ID from the list and then stop it:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+docker stop <container_id>
