@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { showSidebar } from "../features/cartSlice";
 import { BsBag } from "react-icons/bs";
-import logo from "../assets/logo.jpg";
+import logo from "../assets/logo.svg";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
