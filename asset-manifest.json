@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/horizons45/static/css/main.d488efc3.css",
-    "main.js": "/horizons45/static/js/main.c8b036d2.js",
+    "main.js": "/horizons45/static/js/main.1bb911d3.js",
     "static/media/shopping.jpg": "/horizons45/static/media/shopping.dcc57afebd15f7afa4cf.jpg",
     "static/media/logo.svg": "/horizons45/static/media/logo.645859aa7cad2d084ca0c986b9c2e7bc.svg",
     "index.html": "/horizons45/index.html",
     "main.d488efc3.css.map": "/horizons45/static/css/main.d488efc3.css.map",
-    "main.c8b036d2.js.map": "/horizons45/static/js/main.c8b036d2.js.map"
+    "main.1bb911d3.js.map": "/horizons45/static/js/main.1bb911d3.js.map"
   },
   "entrypoints": [
     "static/css/main.d488efc3.css",
-    "static/js/main.c8b036d2.js"
+    "static/js/main.1bb911d3.js"
   ]
 }
